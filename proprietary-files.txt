@@ -205,7 +205,6 @@ vendor/lib64/libdualcam_optical_zoom.so
 vendor/lib64/libdualcam_optical_zoom_control.so
 vendor/lib64/libdualcam_refocus_image.so
 vendor/lib64/libdualcapture.so
-vendor/lib64/libhal.wsm.samsung.so
 vendor/lib64/libhigh_dynamic_range.so
 vendor/lib64/libhigh_dynamic_range_bokeh.so
 vendor/lib64/libjnihelper.so

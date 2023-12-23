@@ -49,7 +49,11 @@ PRODUCT_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
 # RRO Overlays
-PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    SettingsOverlay
+
+# Speed profile services and wifi-service to reduce RAM and storage
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
 # Ramdisk
 PRODUCT_PACKAGES += \
