@@ -16,10 +16,10 @@
 
 -include device/samsung/sm6150-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/samsung/a71
+DEVICE_PATH := device/samsung/m51
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := a71
+TARGET_OTA_ASSERT_DEVICE := m51
 
 # Camera
 SOONG_CONFIG_NAMESPACES += samsung_sm6150CameraVars
@@ -29,24 +29,18 @@ SOONG_CONFIG_samsung_sm6150CameraVars += \
 SOONG_CONFIG_samsung_sm6150CameraVars_samsung_sm6150_model := $(TARGET_DEVICE)
 
 # Board
-TARGET_BOARD_NAME := SRPSF18B010
-
-# FOD
-TARGET_SEC_FP_REQUEST_FORCE_CALIBRATE := true
-TARGET_SEC_FP_REQUEST_TOUCH_EVENT := true
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.a71
-TARGET_USES_FOD_ZPOS := true
+TARGET_BOARD_NAME := SRPTD22A005
 
 # GPU
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno618
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_a71
-TARGET_RECOVERY_DEVICE_MODULES := libinit_a71
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_m51
+TARGET_RECOVERY_DEVICE_MODULES := libinit_m51
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
-TARGET_KERNEL_CONFIG := a71_defconfig
+TARGET_KERNEL_CONFIG := m51_defconfig
 BOARD_DTB_OFFSET := 0x01F00000
 BOARD_MKBOOTIMG_ARGS := --dtb_offset $(BOARD_DTB_OFFSET) --header_version $(BOARD_BOOT_HEADER_VERSION)
 
@@ -54,10 +48,10 @@ BOARD_MKBOOTIMG_ARGS := --dtb_offset $(BOARD_DTB_OFFSET) --header_version $(BOAR
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Security Patch Level
-VENDOR_SECURITY_PATCH := 2023-08-01
+VENDOR_SECURITY_PATCH := 2023-11-01
 
 # Sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Get non-open-source specific aspects
-include vendor/samsung/a71/BoardConfigVendor.mk
+include vendor/samsung/m51/BoardConfigVendor.mk

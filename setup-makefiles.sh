@@ -17,7 +17,7 @@
 
 set -e
 
-export DEVICE=a71
+export DEVICE=m51
 export DEVICE_COMMON=sm6150-common
 export VENDOR=samsung
 

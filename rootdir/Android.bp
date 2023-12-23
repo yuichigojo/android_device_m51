@@ -7,8 +7,8 @@
 // Ramdisk's Hw
 
 prebuilt_etc {
-    name: "init.a71.rc",
-    src: "vendor/etc/init/hw/init.a71.rc",
+    name: "init.m51.rc",
+    src: "vendor/etc/init/hw/init.m51.rc",
     sub_dir: "init/hw",
     vendor: true,
 }

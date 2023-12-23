@@ -15,10 +15,10 @@
 //
 
 cc_library_static {
-    name: "libinit_a71",
+    name: "libinit_m51",
     recovery_available: true,
     srcs: [
-        "init_a71.cpp",
+        "init_m51.cpp",
     ],
     include_dirs: [
         "system/libbase/include",

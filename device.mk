@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/a71
+DEVICE_PATH := device/samsung/m51
 
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_SHIPPING_API_LEVEL := 29
@@ -27,44 +27,37 @@ PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/vendor/etc/mixer_paths_idp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_idp.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/mixer_paths_idp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_idp.xml
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.6-service.a71 \
+    android.hardware.camera.provider@2.6-service.m51
 
 # Display
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
-
-# Fingerprint
-TARGET_HAS_UDFPS := true
 
 # Inherit Common Device Tree
 $(call inherit-product, device/samsung/sm6150-common/sm6150.mk)
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service \
-
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/vendor/etc/nfc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/nfc/libnfc-nxp_RF.conf \
-    $(DEVICE_PATH)/rootdir/vendor/etc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
-    $(DEVICE_PATH)/rootdir/vendor/etc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
-    $(DEVICE_PATH)/rootdir/vendor/etc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp_RF.conf \
+    android.hardware.nfc@1.2-service.samsung
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-lineage \
+    $(DEVICE_PATH)/overlay
+
+# RRO Overlays
+PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.a71.rc \
+    init.m51.rc
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH) \
+    $(DEVICE_PATH)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/samsung/a71/a71-vendor.mk)
+$(call inherit-product, vendor/samsung/m51/m51-vendor.mk)

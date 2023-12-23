@@ -14,26 +14,31 @@
 # limitations under the License.
 #
 
-# Inherit from a71 device
-$(call inherit-product, device/samsung/a71/device.mk)
+# Inherit from m51 device
+$(call inherit-product, device/samsung/m51/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Evolution-X stuff.
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_a71
-PRODUCT_DEVICE := a71
+PRODUCT_NAME := evolution_m51
+PRODUCT_DEVICE := m51
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-A715
+PRODUCT_MODEL := SM-M515F
 PRODUCT_MANUFACTURER := samsung
 
 # Use the latest approved GMS identifiers
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="a71naxx-user 13 TP1A.220624.014 A715FXXUADWH4 release-keys" \
-    PRODUCT_DEVICE=a71 \
-    PRODUCT_NAME=a71naxx \
+    PRIVATE_BUILD_DESC="m51nsxx-user 12 SP1A.210812.016 M515FXXS4DWA3 release-keys" \
+    PRODUCT_DEVICE=m51 \
+    PRODUCT_NAME=m51nsxx \
     TARGET_BOOTLOADER_BOARD_NAME=sm6150 \
 
-BUILD_FINGERPRINT := "samsung/a71naxx/qssi:13/TP1A.220624.014/A715FXXUADWH4:user/release-keys"
+BUILD_FINGERPRINT := "samsung/m51nsxx/m51:11/RP1A.200720.012/M515FXXS4DWA3:user/release-keys"
+
+# Evolution Flags
+TARGET_USES_PICO_GAPPS := true
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_SUPPORTS_QUICK_TAP := true
